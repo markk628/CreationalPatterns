@@ -2,7 +2,6 @@ import UIKit
 
 ///Subsystem 1
 class HotelBooker {
-
     func book() {
         print("Hotel booked successfully")
     }
@@ -10,9 +9,15 @@ class HotelBooker {
 
 ///Subsystem 2
 class FlightBooker {
-
     func book() {
         print("Flight booked successfully")
+    }
+}
+
+///Subsystem 3
+class ChauffeurBooker {
+    func book() {
+        print("Ride booked successfully")
     }
 }
 
@@ -22,16 +27,18 @@ class FlightBooker {
 class TravelFacade {
     let hotelBooker = HotelBooker()
     let flightBooker = FlightBooker()
+    let chaufferBooker = ChauffeurBooker()
     
-    func getFlightsAndHotels() {
+    func getReservations() {
         hotelBooker.book()
         flightBooker.book()
+        chaufferBooker.book()
     }
 }
 
 /// Client
 let travelFacade = TravelFacade()
-travelFacade.getFlightsAndHotels()
+travelFacade.getReservations()
 
 
 /* This prints:
